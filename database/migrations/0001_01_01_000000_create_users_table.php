@@ -15,8 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->enum('role',['superadmin','admin', 'adminonline','adminretail','sales','owner','gudang','helper'])->default('superadmin');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->text('alamat')->nullable();
+            $table->string('no_telp')->nullable();
+            $table->text('foto')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
